@@ -1,0 +1,195 @@
+<section id="hero">
+    <div class="text d-flex flex-column gap-3">
+    <span class="badge rounded-pill m-auto">مرحباً بك في عدسة</span>
+<h1>اكتشف <span>فن</span><br>التصوير الفوتوغرافي</h1>
+<span class="text-center text-white-50">انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.</span>
+<div class="buttons d-flex justify-content-center gap-2 pt-2">
+<button class="btn orange text-light rounded-pill p-3" routerLink="/blog">← استكشف المقالات</button>
+<button class=" btn rounded-pill border-white p-2 text-light" routerLink="/about-us">اعرف المزيد</button>
+</div>
+</div>
+<div class="d-flex justify-content-center flex-wrap gap-3 py-4">
+  @for (card of cards; track $index) {
+    <div class="card d-flex flex-column gap-3 text-center justify-content-center">
+      <i class="bi {{card.icon }} text-warning fs-1"></i>
+      <h3>{{ card.no }}</h3>
+      <p class="text-white-50">{{ card.text }}</p>
+    </div>
+  }
+</div>
+</section>
+
+<section id="articles">
+  <div class="container p-2">
+<div class="text d-flex flex-column gap-3 py-3">
+  <div class="badge align-self-start">
+مميز</div>
+  <h2 class="text-light">مقالات مختارة</h2>
+<div class="end d-flex justify-content-between">
+  <span class="text-white-50 fs-4">محتوى منتقى لبدء رحلة تعلمك</span>
+  <button class="btn" routerLink="/blog">ابدا رحلتك</button>
+</div>
+</div>
+@for(post of posts; track post.id){
+<div class="card mb-3 p-0" [routerLink]="['/blog', post.slug]">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <div class="image-container">
+      <img [src]="post.image" class="img-fluid rounded-start border-3" alt="...">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <div class="card-head d-flex gap-5">
+          <div class="badge">{{post.category}}</div>
+           <span class="text-white-50">
+      <i class="fa-regular fa-clock"></i>
+    {{post.readTime}}
+    </span>
+        </div>
+        <h5 class="card-title text-light">{{post.title}}</h5>
+        <p class="card-text text-white-50">{{post.excerpt}}</p>
+      </div>
+      <div class="author d-flex align-items-center justify-content-between">
+
+  <div class="d-flex align-items-center gap-2 px-3">
+    <img
+      [src]="post.author.avatar"
+      alt="author"
+      class="rounded-circle"
+      width="50"
+      height="50"
+    
+    >
+
+    <div>
+      <h6 class="mb-1 text-light">{{post.author.name}}</h6>
+      <small class="text-white-50">{{post.date}}</small>
+    </div>
+
+  </div>
+
+  <div class="d-flex align-items-center gap-3">
+  </div>
+
+</div>
+    </div>
+  </div>
+</div>
+}
+</div>
+</section>
+<!-- ...... -->
+<section class="category-section text-center" dir="rtl">
+  <div class="container p-3">
+    <div class="d-inline-flex align-items-center gap-2 custom-badge px-3 py-1 rounded-pill mb-3">
+      <span class="orange-dots">••</span>
+      <span>التصنيفات</span>
+    </div>
+    
+    <h1 class="fw-bold text-white mb-2 main-title">استكشف حسب الموضوع</h1>
+    <p class="text-secondary mb-5">اعثر على محتوى مصمم حسب اهتماماتك</p>
+    <div class="cards-grid">
+
+      @for (card of cards2; track $index) {
+        <div class="custom-card card-{{ $index + 1 }}" routerLink="portrait-secrets">
+          <div class="icon-wrapper mb-3">
+            <i class="bi {{ card.icons }}"></i>
+          </div>
+          <h4 class="card-title">{{ card.title }}</h4>
+          <span class="card-subtitle">{{ card.desc }}</span>
+        </div>
+
+      }
+  </div>
+  
+  </div>
+</section>
+
+
+<section id="newest">
+    <div class="container">
+<div class="text d-flex flex-column gap-3 py-3">
+  <div class="badge align-self-start">
+الأحدث</div>
+  <h2 class="text-light">أحدث المقالات</h2>
+<div class="end d-flex justify-content-between">
+  <span class="text-white-50 fs-4"> محتوى جديد طازج من المطبعة</span>
+  <button class="btn text-danger" routerLink="/blog">عرض جميع المقالات</button>
+</div>
+<div class="cards d-flex gap-3">
+@for(article of articles; track article.id){
+    <div class="my-card" [routerLink]="['/blog', article.slug]">
+  <img [src]="article.image" class="card-img-top" alt="...">
+   <div class="card-body">
+        <div class="card-head d-flex gap-5">
+          <div class="badge">{{article.category}}</div>
+           <span class="text-white-50">
+      <i class="fa-regular fa-clock"></i>
+    {{article.readTime}}
+    </span>
+        </div>
+        <h5 class="card-title text-light">{{article.title}}</h5>
+        <p class="card-text text-white-50">{{article.excerpt}}</p>
+      </div>
+      <div class="author d-flex align-items-center justify-content-between">
+
+  <div class="d-flex align-items-center gap-2 px-3">
+    <img
+      [src]="article.author.avatar"
+      alt="author"
+      class="rounded-circle"
+      width="50"
+      height="50"
+    
+    >
+
+    <div>
+      <h6 class="mb-1 text-light">{{article.author.name}}</h6>
+      <small class="text-white-50">{{article.date}}</small>
+    </div>
+
+  </div>
+      </div>
+      </div>
+}
+</div>
+</div>
+    </div>
+</section>
+
+<section id="contact">
+  <div class="container pt-5">
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">اشترك في <span>نشرتنا الاخبارية</span></h5>
+    <p class="card-text text-white-50">احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك الإلكتروني.</p>
+<div class="body d-flex justify-content-center gap-3">
+<input type="text" placeholder="أدخل بريدك الإلكتروني" class="px-5 rounded-2 bg-dark w-25">
+<button class="btn">اشترك الان</button>
+</div>
+  </div>
+  <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 gap-md-0 py-4">
+    <div class="d-flex avatar-stack ms-3">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user1">
+      <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="user2">
+      <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="user3">
+    </div>
+    <span class="text-white-50">إلغاء الاشتراك في أي وقت</span>
+    <span class="divider-dot text-white-50">بدون إزعاج</span>
+
+    <span class="divider-dot text-white-50">
+      انضم لـ <span class="count-strong">10,000+</span> مصور
+    </span>
+
+
+
+  </div>
+</div>
+ 
+
+
+
+</div>
+
+</section>

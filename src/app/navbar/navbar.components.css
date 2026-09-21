@@ -1,0 +1,14 @@
+.text{
+    color: #d4d4d9;
+}
+.orange{
+    background-color: #EF610F;
+}
+.text-orange{
+    color: #EF610F;
+}
+.active {
+color: white !important;
+  background-color: #EF610F;
+  border-radius: 20px;
+}

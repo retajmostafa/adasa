@@ -1,0 +1,75 @@
+<section id="hero">
+ <div class="text d-flex flex-column gap-3">
+    <span class="badge rounded-pill m-auto">مدونتنا</span>
+<h1> استكشف<span> مقالاتنا</span></h1>
+<span class="text-center text-white-50">انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.</span>
+ </div>
+</section>
+
+<section id="posts">
+<div class="container py-4" dir="rtl">
+<div class="header d-flex justify-content-between">
+    <input type="text" placeholder="ابحث في المقالات..." class="rounded-3 bg-dark px-4">
+    <div class="buttons">
+   <ul class="d-flex gap-3">
+<li
+ class="btn" 
+   [class.active]="selectedCategory === 'الكل'"
+ (click)="setCategory('الكل')">جميع المقالات</li>
+
+    @for(cat of categories; track cat.name){
+      <li class="btn"
+        [class.active]="selectedCategory === cat.name"
+       (click)="setCategory(cat.name)">
+        {{ cat.name }}
+      </li>
+    }
+
+   </ul>
+    </div>
+</div>
+
+<div class="row g-4 py-4">
+@for(post of posts; track post.id){
+     @if(selectedCategory === 'الكل' || post.category === selectedCategory){
+        <div class="col-12 col-md-6 col-lg-4">
+    <div class="my-card" [routerLink]="['/blog', post.slug]">
+  <img [src]="post.image" class="card-img-top" alt="...">
+   <div class="card-body">
+        <div class="card-head d-flex gap-5">
+          <div class="badge">{{post.category}}</div>
+           <span class="text-white-50">
+      <i class="fa-regular fa-clock"></i>
+    {{post.readTime}}
+    </span>
+        </div>
+        <h5 class="card-title text-light">{{post.title}}</h5>
+        <p class="card-text text-white-50">{{post.excerpt}}</p>
+      </div>
+      <div class="author d-flex align-items-center justify-content-between">
+
+  <div class="d-flex align-items-center gap-2 px-3">
+    <img
+      [src]="post.author.avatar"
+      alt="author"
+      class="rounded-circle"
+      width="50"
+      height="50"
+    
+    >
+
+    <div>
+      <h6 class="mb-1 text-light">{{post.author.name}}</h6>
+      <small class="text-white-50">{{post.date}}</small>
+    </div>
+
+  </div>
+      </div>
+      </div>
+</div>
+}
+}
+</div>
+
+</div>
+</section>

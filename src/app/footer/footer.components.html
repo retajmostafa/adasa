@@ -1,0 +1,79 @@
+<footer class="footer-section pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4 pb-4">
+      
+      <!-- Column 1: Brand Info -->
+      <div class="col-lg-3 col-md-6">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="brand-icon">
+            <span>ع</span>
+          </div>
+          <span class="fw-bold fs-4 text-white">عدسة</span>
+        </div>
+        <p class="text-secondary fs-7 leading-relaxed mb-4">
+          مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونشائح عملية لتطوير مهاراتكم.
+        </p>
+        <!-- Social Links -->
+        <div class="d-flex gap-2">
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-github"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Explore Links -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-heading mb-3">استكشف</h6>
+        <ul class="list-unstyled p-0 m-0 d-flex flex-column gap-2">
+          <li><a href="#" class="footer-link">الرئيسية</a></li>
+          <li><a href="#" class="footer-link">المدونة</a></li>
+          <li><a href="#" class="footer-link">من نحن</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Categories Links -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-heading mb-3">التصنيفات</h6>
+        <ul class="list-unstyled p-0 m-0 d-flex flex-column gap-2">
+          <li><a href="#" class="footer-link">إضاءة</a></li>
+          <li><a href="#" class="footer-link">بورتريه</a></li>
+          <li><a href="#" class="footer-link">مناظر طبيعية</a></li>
+          <li><a href="#" class="footer-link">تقنيات</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Newsletter -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-heading mb-3">ابقى على اطلاع</h6>
+        <p class="text-secondary fs-7 mb-3">
+          اشترك للحصول على أحدث المقالات والتحديثات.
+        </p>
+        <form (submit)="$event.preventDefault()">
+          <div class="mb-3">
+            <input 
+              type="email" 
+              class="form-control custom-input" 
+              placeholder="أدخل بريدك الإلكتروني"
+            >
+          </div>
+          <button type="submit" class="btn btn-orange w-100 fw-bold" routerLink="/sabout-us">اشترك</button>
+        </form>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary opacity-25 my-4">
+
+    <!-- Bottom Bar -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 fs-7 text-secondary">
+      <div>
+        <span>© 2026 عدسة. صنع بكل <i class="bi bi-heart-fill text-danger mx-1"></i> جميع الحقوق محفوظة.</span>
+      </div>
+      <div class="d-flex gap-3">
+        <a href="#" class="text-secondary text-decoration-none hover-white">سياسة الخصوصية</a>
+        <a href="#" class="text-secondary text-decoration-none hover-white">شروط الخدمة</a>
+      </div>
+    </div>
+  </div>
+</footer>
