@@ -14,9 +14,7 @@ export const routes: Routes = [
 {path:'navbar' , component:NavbarComponents},
 {path:'home', component:HomeComponents},
 {path:'blog', component:BlogComponents},
-{path:'blog/:slug', component:PageComponents,
-RenderMode: RenderMode.Prerender
-},
+{path:'blog/:slug', component:PageComponents},
 {path:'about-us', component:AboutUsComponents},
 {path:'**', component:WildComponents}
 ]
