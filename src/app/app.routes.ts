@@ -1,3 +1,4 @@
+import { RenderMode } from '@angular/ssr';
 import { WildComponents } from './wild/wild.components';
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
@@ -13,7 +14,9 @@ export const routes: Routes = [
 {path:'navbar' , component:NavbarComponents},
 {path:'home', component:HomeComponents},
 {path:'blog', component:BlogComponents},
-{path:'blog/:slug', component:PageComponents},
+{path:'blog/:slug', component:PageComponents,
+RenderMode: RenderMode.Prerender
+},
 {path:'about-us', component:AboutUsComponents},
 {path:'**', component:WildComponents}
 ]
